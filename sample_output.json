@@ -1,1 +1,69 @@
-
+{
+  "target": "http://localhost:3000",
+  "base_url": "http://localhost:3000",
+  "domain": "localhost",
+  "subdomains": [
+    {
+      "subdomain": "api.localhost",
+      "ip": "127.0.0.1"
+    },
+    {
+      "subdomain": "admin.localhost",
+      "ip": "127.0.0.1"
+    }
+  ],
+  "directories": [
+    {
+      "url": "http://localhost:3000/assets/",
+      "status_code": 200,
+      "content_snippet": "<!doctype html><html><head><title>Juice Shop</title>.../assets/js/app.js</script>",
+      "len": 14285,
+      "matched_signatures": [
+        "api_like_endpoint"
+      ]
+    },
+    {
+      "url": "http://localhost:3000/api/",
+      "status_code": 200,
+      "content_snippet": "{\"error\":\"Unauthorized\",\"message\":\"Authentication required\"}",
+      "len": 52,
+      "matched_signatures": [
+        "api_like_endpoint"
+      ]
+    },
+    {
+      "url": "http://localhost:3000/.git/HEAD",
+      "status_code": 200,
+      "content_snippet": "refs/heads/main",
+      "len": 12,
+      "matched_signatures": [
+        "possible_git_exposure"
+      ]
+    },
+    {
+      "url": "http://localhost:3000/.env",
+      "status_code": 404,
+      "content_snippet": "",
+      "len": 0,
+      "matched_signatures": []
+    },
+    {
+      "url": "http://localhost:3000/uploads/",
+      "status_code": 200,
+      "content_snippet": "<html><body><h1>Index of /uploads</h1><a href=\"file1.zip\">file1.zip</a>",
+      "len": 842,
+      "matched_signatures": [
+        "directory_listing"
+      ]
+    },
+    {
+      "url": "http://localhost:3000/config.php.bak",
+      "status_code": 200,
+      "content_snippet": "<?php // backup config\n$DB_PASS = 'REDACTED_SAMPLE';",
+      "len": 154,
+      "matched_signatures": [
+        "possible_backup_file",
+        "possible_env_or_secret"
+      ]
+    }
+  
