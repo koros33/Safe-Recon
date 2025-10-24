@@ -78,5 +78,7 @@ The author is **not responsible for misuse** of this tool.
 
 By using this repository, **you agree to use it ethically**.
 
-I am **Not Responsible for any liabilities from this software**.
+I am **Not Responsible for any harm from this software**.
+
+No entities were harmed during the creation of this software.
 
